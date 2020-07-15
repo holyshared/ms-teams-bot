@@ -18,9 +18,13 @@ app.get('/', (req, res) => {
 
 app.get('/callback', async (req, res) => {
   const code = req.query.code;
-  const result = await teams.getAccessToken(code);
-  console.log(result);
-  res.status(200).end('Ok');
+  teams.getAccessToken(code).then(result => {
+    console.log(result);
+    res.status(200).end('Ok');
+  }).catch(err => {
+    console.log(err);
+    res.status(500).end('oops!');
+  });
 });
 
 app.get('/token', (req, res, next) => {

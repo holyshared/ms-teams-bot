@@ -35,6 +35,7 @@ exports.authorizeURL = () => {
     response_mode: 'query',
     scope,
     state: uuid.v4(),
+    prompt: 'consent',
     code_challenge: codeChallenge,
     code_challenge_method: 'S256'
   });

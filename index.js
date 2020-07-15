@@ -10,15 +10,18 @@ app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ type: 'application/*+json' }));
 
+result = {};
+
 app.get('/', (req, res) => {
+  result = teams.authorizeURL();
   res.render('index.ejs', {
-    url: teams.authorizeURL()
+    url: result.url
   });
 });
 
 app.get('/callback', async (req, res) => {
   const code = req.query.code;
-  teams.getAccessToken(code).then(result => {
+  teams.getAccessToken(code, result.codeVerifier).then(result => {
     console.log(result);
     res.status(200).end('Ok');
   }).catch(err => {

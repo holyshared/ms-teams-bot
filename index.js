@@ -6,6 +6,10 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ type: 'application/*+json' }));
 
+app.get('/', (req, res) => {
+  res.status(200).end('Ok');
+});
+
 app.get('/callback', (req, res) => {
   const code = req.query.code;
   console.log('code------------------');

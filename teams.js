@@ -10,7 +10,7 @@ const tenantTokenURL = (tenantId) => `https://login.microsoftonline.com/${tenant
 
 //const scope = 'https%3A%2F%2Fgraph.microsoft.com%2FUser.Read%20https%3A%2F%2Fgraph.microsoft.com%2FGroup.ReadWrite.All%20https%3A%2F%2Fgraph.microsoft.com%2FChannelMessage.Send';
 //const scope = 'User.Read%20Group.ReadWrite.All%20ChannelMessage.Send';
-const scope = 'Group.ReadWrite.All ChannelMessage.Send';
+const scope = 'Group.ReadWrite.All ChannelMessage.Send People.Read.All';
 
 
 const codeChallengeOf = (codeVerifier) => {

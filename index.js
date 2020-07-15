@@ -21,6 +21,8 @@ app.get('/', (req, res) => {
 
 app.get('/callback', async (req, res) => {
   const code = req.query.code;
+console.log('code------------------');
+console.log(code);
   teams.getAccessToken(code, result.codeVerifier).then(result => {
     console.log(result);
     res.status(200).end('Ok');

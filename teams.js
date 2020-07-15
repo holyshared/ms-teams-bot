@@ -35,8 +35,8 @@ exports.authorizeURL = () => {
     response_mode: 'query',
     scope,
     state: uuid.v4(),
-    code_challenge: codeChallenge,
-    code_challenge_method: 'S256'
+//    code_challenge: codeChallenge,
+  //  code_challenge_method: 'S256'
   });
   return {
     codeChallenge,
@@ -55,7 +55,7 @@ const getAccessToken = async (code, codeVerifier) => {
     redirect_uri: process.env.REDIRECT_URI,
     grant_type: 'authorization_code',
     client_secret: process.env.CLIENT_SECRET_TOKEN,
-    code_verifier: codeVerifier
+//    code_verifier: codeVerifier
   };
 
   const result = await axios.post(url, querystring.stringify(params), {

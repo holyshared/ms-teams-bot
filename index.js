@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
+const teams = require('./teams');
+
 const app = express();
 
 app.set("view engine", "ejs");
@@ -10,7 +12,7 @@ app.use(bodyParser.json({ type: 'application/*+json' }));
 
 app.get('/', (req, res) => {
   res.render('index.ejs', {
-    url: 'https://google.com'
+    url: teams.authorizeURL()
   });
 });
 

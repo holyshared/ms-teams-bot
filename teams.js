@@ -8,7 +8,7 @@ const tenantAuthoriseURL = (tenantId) => `https://login.microsoftonline.com/${te
 const tenantTokenURL = (tenantId) => `https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/token`;
 
 
-const scope = 'https%3A%2F%2Fgraph.microsoft.com%2FUser.Read%20https%3A%2F%2Fgraph.microsoft.com%2FGroup.ReadWrite.All%20https%3A%2F%2Fgraph.microsoft.com%2FChannelMessage.Send%20';
+const scope = 'https%3A%2F%2Fgraph.microsoft.com%2FUser.Read%20https%3A%2F%2Fgraph.microsoft.com%2FGroup.ReadWrite.All%20https%3A%2F%2Fgraph.microsoft.com%2FChannelMessage.Send';
 
 
 const codeChallengeOf = (codeVerifier) => {

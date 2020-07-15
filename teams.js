@@ -17,7 +17,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 &state=12345
 */
 
-const scope = 'ChannelMessage.Send%20Group.ReadWrite.All';
+const scope = 'User.Read%20ChannelMessage.Send%20Group.ReadWrite.All';
 
 exports.authorizeURL = () => {
   const params = [

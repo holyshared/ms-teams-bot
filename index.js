@@ -16,10 +16,10 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/callback', (req, res) => {
+app.get('/callback', async (req, res) => {
   const code = req.query.code;
-  console.log('code------------------');
-  console.log(code);
+  const result = await teams.getAccessToken(code);
+  console.log(result);
   res.status(200).end('Ok');
 });
 

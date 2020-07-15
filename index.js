@@ -3,11 +3,15 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+app.set("view engine", "ejs");
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ type: 'application/*+json' }));
 
 app.get('/', (req, res) => {
-  res.status(200).end('Ok');
+  res.render('index.ejs', {
+    url: 'https://google.com'
+  });
 });
 
 app.get('/callback', (req, res) => {

@@ -18,7 +18,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 &state=12345
 */
 
-const scope = 'User.Read%20ChannelMessage.Send%20Group.ReadWrite.All';
+const scope = 'https%3A%2F%2Fgraph.microsoft.com/User.Read%20https%3A%2F%2Fgraph.microsoft.com/Group.ReadWrite.All%20https%3A%2F%2Fgraph.microsoft.com/ChannelMessage.Send%20';
 
 
 const codeChallengeOf = (codeVerifier) => {

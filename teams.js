@@ -8,17 +8,7 @@ const tenantAuthoriseURL = (tenantId) => `https://login.microsoftonline.com/${te
 const tenantTokenURL = (tenantId) => `https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/token`;
 
 
-/*
-https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
-client_id=6731de76-14a6-49ae-97bc-6eba6914391e
-&response_type=code
-&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
-&response_mode=query
-&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
-&state=12345
-*/
-
-const scope = 'https%3A%2F%2Fgraph.microsoft.com/User.Read%20https%3A%2F%2Fgraph.microsoft.com/Group.ReadWrite.All%20https%3A%2F%2Fgraph.microsoft.com/ChannelMessage.Send%20';
+const scope = 'https%3A%2F%2Fgraph.microsoft.com%2FUser.Read%20https%3A%2F%2Fgraph.microsoft.com%2FGroup.ReadWrite.All%20https%3A%2F%2Fgraph.microsoft.com%2FChannelMessage.Send%20';
 
 
 const codeChallengeOf = (codeVerifier) => {

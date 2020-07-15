@@ -1,6 +1,6 @@
 const uuid = require('uuid');
 
-const AUTHORISE_URL = "https://login.microsoftonline.com/common/oauth2/v2.0/authorize";
+const tenantAuthoriseURL = (tenantId) => `https://login.microsoftonline.com/${tenantId}/oauth2/v2.0/authorize`;
 
 /*
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
@@ -23,5 +23,5 @@ exports.authorizeURL = () => {
     `scope=${scope}`,
     `state=${uuid.v4()}`
   ];
-  return `${AUTHORISE_URL}?${params.join('&')}`; 
+  return `${tenantAuthoriseURL(process.env.TENANT_ID)}?${params.join('&')}`; 
 };
